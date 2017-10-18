@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "CLI Data gem project"
-date:       2017-10-18 01:21:48 +0000
+date:       2017-10-17 21:21:49 -0400
 permalink:  cli_data_gem_project
 ---
 
@@ -10,7 +10,7 @@ Finally the project that I could do from scratch! Well, sort of. I could just co
 
 You see, the problem I had with labs based on passing multiple small tests was that sometimes I didn't really understand what role a certain method or class was supposed to be playing in the program. I read the test file, saw the requirements and programmed the method to fit the spec. Only when I was finishing the program I began to really understand how the flow was distributed between different classes and methods and how they collaborated.
 
-The latest project was a step up in my programming experience. I must admit I still peeked at the examples but I still managed to build a large part of architecture by myself. 
+The latest project was a step up in my programming experience. I must admit I still peeked at the examples but still managed to build a large part of architecture by myself. 
 
 Initially I wanted to scrape tradingeconomics.com where you can find all sort of macroeconomic data on any country. But that would be too easy because the homepage already contains all important indicators and there's no need to go a level deeper. So I decided to turn to the switchup.org, the site I used for my research on coding bootcamps before I chose Flatiron!
 
