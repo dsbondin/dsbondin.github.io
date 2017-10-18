@@ -14,7 +14,7 @@ The latest project was a step up in my programming experience. I must admit I st
 
 Initially I wanted to scrape tradingeconomics.com where you can find all sort of macroeconomic data on any country. But that would be too easy because the homepage already contains all important indicators and there's no need to go a level deeper. So I decided to turn to the switchup.org, the site I used for my research on coding bootcamps before I chose Flatiron!
 
-My CLI gem provides information on 10 best coding bootcamps in NYC. I didn't make a separate Scraper class, all scraping happens inside `BestCodingBootcamps::Bootcamp` class. The program scrapes the NYC bootcamps page to get the names and urls with the `.create_bootcamps` class method and at the same time initializes bootcamp instances with these two parameters.
+My CLI gem provides information on 10 best coding bootcamps in NYC. I didn't make a separate Scraper class, all scraping happens inside `BestCodingBootcamps::Bootcamp` class. The program scrapes the NYC bootcamps page to get the list of bootcamps, initializes `Bootcamp` instances and provides each with the `:name` and `:url` attributes scraped from that page.
 
 ```
   def self.create_bootcamps
