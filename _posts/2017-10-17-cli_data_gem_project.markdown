@@ -50,4 +50,4 @@ In general, I'm satisfied with my program, but still looking forward to refactor
 
 P.S. I just realized my gem could be a lot nicer if I added an option to visit the school's website. I'll probably do that in the next few days.
 
-https://github.com/dsbondin/best-coding-bootcamps-cli-gem
+[https://github.com/dsbondin/best-coding-bootcamps-cli-gem](https://github.com/dsbondin/best-coding-bootcamps-cli-gem)
