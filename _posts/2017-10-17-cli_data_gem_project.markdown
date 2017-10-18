@@ -47,3 +47,7 @@ Initially I had `attr_accessor` for all bootcamp attributes but then I realized 
 The is a one-way relationship between `BestCodingBootcamps::CLI` class `BestCodingBootcamps::Bootcamp` class. CLI knows about Bootcamp and calls it with `.create_bootcamps` class method. Bootcamp doesn't know about CLI. The `#menu` and other user interface interaction methods are pretty straightforward, the only peculiarity is that the `#menu` method uses recursion. I didn't like the use of `input = nil` and `if-else` inside the `while` loop, so I inserted reference to the method itself inside some if-else outcomes. It still doesn't look very pretty with three `#menu` calls but it is what it is.
 
 In general, I'm satisfied with my program, but still looking forward to refactor it if needed.
+
+P.S. I just realized my gem could be a lot nicer if I added an option to visit the school's website. I'll probably do that in the next few days.
+
+https://github.com/dsbondin/best-coding-bootcamps-cli-gem
