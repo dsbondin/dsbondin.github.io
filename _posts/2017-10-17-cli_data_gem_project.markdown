@@ -26,7 +26,7 @@ My CLI gem provides information on 10 best coding bootcamps in NYC. I didn't mak
     end
   end
 	
-  def initialize(name = nil, url = nil)
+  def initialize
     @@all << self
   end
 ```
