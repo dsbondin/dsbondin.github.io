@@ -44,7 +44,7 @@ My CLI gem provides information on 10 best coding bootcamps in NYC. I didn't mak
 
 Initially I had `attr_accessor` for all bootcamp attributes but then I realized that I was already using `#ranking`,  `#about` and  `#courses` in my code so I only left those that needed getters and setters: `:name` and `:url`.
 
-There is a one-way relationship between `BestCodingBootcamps::CLI` class `BestCodingBootcamps::Bootcamp` classes. CLI knows about Bootcamp and calls it with `.create_bootcamps` class method. Bootcamp doesn't know about CLI. The `#menu` and other user interface interaction methods are pretty straightforward, the only peculiarity is that the `#menu` method uses recursion. I didn't like the use of `input = nil` and `if-else` inside the `while` loop, so I inserted reference to the method itself inside some if-else outcomes. It still doesn't look very pretty with three `#menu` calls but it is what it is.
+There is a one-way relationship between `BestCodingBootcamps::CLI` class `BestCodingBootcamps::Bootcamp` classes. CLI knows about Bootcamp and calls it with `.create_bootcamps` class method. Bootcamp doesn't know about CLI. The `#menu` and other user interface interaction methods are pretty straightforward, the only peculiarity is that the `#menu` method uses recursion. I didn't like the use of `input = nil` and `if-else` inside the `while` loop, so I inserted reference to the method itself inside some if-else statements. It still doesn't look very pretty with three `#menu` calls but I still like it more than 'while' 'if-else'.
 
 In general, I'm satisfied with my program, but still looking forward to refactor it if needed.
 
