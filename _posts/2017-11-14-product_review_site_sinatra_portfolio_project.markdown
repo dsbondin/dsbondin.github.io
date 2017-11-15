@@ -1,12 +1,12 @@
 ---
 layout: post
 title:      "Product Review Site Sinatra Portfolio Project"
-date:       2017-11-15 03:25:05 +0000
+date:       2017-11-14 22:25:06 -0500
 permalink:  product_review_site_sinatra_portfolio_project
 ---
 
 
-The idea is pretty straightforward - users can sign up and add reviews to the existing products or add their own. I used 3 models for the app: User, Product and Review. Both User and Product have many Reviews, Reviews belong to a User and a Product. User has many Products he/she left a review for (through: :reviews) and vice versa. 
+The idea is pretty straightforward - users can sign up and add reviews to the existing products or add their own. I used 3 models for the app: User, Product and Review. Both User and Product have many Reviews, Reviews belong to a User and a Product. User has many Products he/she left a review for (`through: :reviews`) and vice versa. 
 
 The signup/login code is similar to the one used in Fwitter project except that I added error messages in case user leaves a blank field for username or password. 
 
@@ -115,6 +115,6 @@ Another feature that differentiates this app from our previous Sinatra labs is t
 
 Hope this is clear and could be helpful to other students. The repository is here: 
 
-https://github.com/dsbondin/review-app-sinatra-project
+[https://github.com/dsbondin/review-app-sinatra-project](https://github.com/dsbondin/review-app-sinatra-project)
 
 -dnsbnd
