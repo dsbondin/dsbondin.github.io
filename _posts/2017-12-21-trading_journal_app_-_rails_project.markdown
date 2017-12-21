@@ -21,7 +21,7 @@ Routes. Turns out the order in which you specify your routes matters. Yes, I rem
   resources :trades
 ```
 
-the routes for the best and the worst trades have to set before `resources`, otherwise Rails will treat them as `trades/:id `and will send the user to `trades#show` action. 
+the routes for the best and the worst trades need to be set before `resources`, otherwise Rails will treat them as `trades/:id `and will send the user to `trades#show` action. 
 
 The second problem I stumbled on was with writing attributes to a linked model. When trader adds a new trade to their journal they have an option of either choosing an existing instrument or creating a new one. Rails allows you to implement both using helpers like `accepts_nested_attributes_for` and `reject_if:` keywords. In my case `reject_if:` would be used to stop Rails from creating an empty Instrument if trader chose an existing from the list. I still don't know why but it didn't work for me, maybe because I used a custom attributes writer. But I fixed the problem quickly by creating a method in TradesController that would erase an empty instrument_attributes hash from params: 
 
