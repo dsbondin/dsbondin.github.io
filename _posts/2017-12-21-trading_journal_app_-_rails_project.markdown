@@ -23,7 +23,7 @@ Routes. Turns out the order in which you specify your routes matters. Yes, I rem
 
 the routes for the best and the worst trades need to be set before `resources`, otherwise Rails will treat them as `trades/:id `and will send the user to `trades#show` action. 
 
-The second problem I stumbled on was with writing attributes to a linked model. When trader adds a new trade to their journal they have an option of either choosing an existing instrument or creating a new one. Rails allows you to implement both using helpers like `accepts_nested_attributes_for` and `reject_if:` keywords. In my case `reject_if:` would be used to stop Rails from creating an empty Instrument if trader chose an existing from the list. I still don't know why but it didn't work for me, maybe because I used a custom attributes writer. But I fixed the problem quickly by creating a method in TradesController that would erase an empty instrument_attributes hash from params: 
+The second problem I stumbled on was with writing attributes to a linked model. When trader adds a new trade to their journal they have an option of either choosing an existing instrument or creating a new one. Rails allows you to implement both using helpers like `accepts_nested_attributes_for` and `reject_if:` keywords. In my case `reject_if:` would be used to stop Rails from creating an empty Instrument if trader chose an existing from the list. I still don't know why but for some reason it didn't work, maybe because I used a custom attributes writer. But I fixed the problem quickly by creating a method in TradesController that would erase an empty instrument_attributes hash from params: 
 
 ```
     # def remove_empty_symbol
@@ -39,7 +39,7 @@ And it worked nicely until I started filling out the spec.md file which requires
   end
 ```
 
-Apart from that I didn't have any other issues but I'll mention one interesting thing I learned. You take it for granted how easily numbers are converted to currency in Excel. But what happens when you do it manually in Ruby? Just add a $ sign, right? And what if you have a negative number, for example when you have loss instead of profit? 
+Apart from that I didn't have any other issues but I'll mention one interesting thing I learned. You take it for granted how easily numbers are converted to currency in Excel. But what happens when you do it manually in Ruby? Just add a $ sign, right? And what if you have a negative number, for example when you record loss instead of profit? 
 
 ```
     $-300.00
