@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Trading Journal App - Rails Project"
-date:       2017-12-21 20:53:20 +0000
+date:       2017-12-21 15:53:21 -0500
 permalink:  trading_journal_app_-_rails_project
 ---
 
