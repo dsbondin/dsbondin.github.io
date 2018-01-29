@@ -1,18 +1,18 @@
 ---
 layout: post
 title:      "Rails App with a jQuery Front End"
-date:       2018-01-18 02:17:52 +0000
+date:       2018-01-17 21:17:53 -0500
 permalink:  rails_app_with_a_jquery_front_end
 ---
 
 
 As in my previous blog post, I will focus on the problems and challenges I encountered while adding JS features to my Trading Journal application. To remind, my app allows a user to keep a record of their transactions in the financial markets. 
 
-The first problem came up when I was working on the trades show page. The user is given an option of sifting through trades by clicking on the `Next Trade` link. When the link is clicked the trade attributes are changed dynamically using jQuery. The problem is that my app allows users to delete their trades and when they do the trades and their ids are gone from the database permanently. So if you look at the trades table in the database the ids column would look something like this: 
+The first problem came up when I was working on the trades show page. The user is given an option of sifting through trades by clicking on the `Next Trade` link. When the link is clicked the trade attributes are changed dynamically using jQuery. The problem is that my app allows users to delete their trades and when they do so the trades and their ids are gone from the database permanently. So if you look at the trades table in the database the ids column would look something like this: 
 
 `1, 2, 3, 5, 6, 9, 10...`
 
-When you get to the 4th trade you get a bug: the page still shows the third trade and the console shows an error as the program cannot find the needed attributes (keys) in the received JSON as the trade is non-existent. Appending a `.fail` method to the request chain will not solve the issue  - the AJAX went fine, the problem is with the object that was received. So what I did here is I went to the TradesController and handled the situation when the `@trade` was not found in the database: 
+When you get to the 4th trade you get a bug: the page still shows the third trade and the console shows an error as the program cannot find the needed attributes (keys) in the received JSON as the trade is non-existent. Appending a `.fail` method to the request chain will not solve the issue  - the AJAX went fine, the problem is with the object that was received. I solved the issue by making the TradesController handle the situation when the `@trade` was not found in the database: 
 
 ```
   def show
@@ -20,7 +20,7 @@ When you get to the 4th trade you get a bug: the page still shows the third trad
       @comment = @trade.comments.build
       respond_to do |format|
         format.html {render :show}
-        format.json {render json: @trade.to_json(include: [:trader, :instrument])}
+        format.json {render json: @trade}
       end
     else
       render json: {error: "This trade has been deleted or hasn't been created yet.", id: params[:id]}
@@ -28,7 +28,7 @@ When you get to the 4th trade you get a bug: the page still shows the third trad
   end
 ```
 
-Here i'm creating a special JSON object that has two keys: `error:` that will display a message on the page, and `id:` of the trade that wasn't found in the database. The `id:` is used to update the Next Trade link, otherwise the user will be stuck with the previous trade id and wouldn't be able to move forward. 
+Here i'm creating a special JSON object that has two keys: `:error` that will display a message on the page, and `:id` of the trade that wasn't found in the database. The `:id` is used to update the Next Trade link, otherwise the user will be stuck with the previous trade id and wouldn't be able to move forward. 
 
 ```
 const renderEmptyTrade = function(trade) {
@@ -57,7 +57,7 @@ const renderForm = function(tradeId) {
   $.get("/trades/" + tradeId + "/comments/new").success(function(response) {
     $("#comment-form").html(response);
     $("#add-comment").hide();
-    postComment(); // add to blog post
+    postComment();
   })
 }
 ```
