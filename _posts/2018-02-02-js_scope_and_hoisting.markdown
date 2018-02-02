@@ -102,6 +102,7 @@ myNameIs();
 
 Does `this` refer to the function myNameIs() with a local variable `name="Donald Trump"`? No, `this` is still global, but the function has assigned global variable `name` a new value, "Donald Trump".
 
+4.
 ```
 const name = "Donald Trump";
 
@@ -117,7 +118,7 @@ person.myNameIs();
 // SpongeBob
 ```
 
-In this example `myNameIs' is a method on object `person` hence `this` refers to the object itself and `this.name` is "SpongeBob". 
+In this example `myNameIs` is a method on object `person` hence `this` refers to the object itself and `this.name` is "SpongeBob". 
 
 ```
 const name = "Donald Trump";
