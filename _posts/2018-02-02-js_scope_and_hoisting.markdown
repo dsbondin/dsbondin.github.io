@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "JS Scope and Hoisting"
-date:       2018-02-02 16:29:39 +0000
+title:      "JS Hoisting, Scope and Context"
+date:       2018-02-02 11:29:40 -0500
 permalink:  js_scope_and_hoisting
 ---
 
@@ -48,7 +48,28 @@ TypeError: greet is not a function
 
 When the `console.log(greet())` gets executed, the engine doesn't know yet that `greet` is a function. It's still a hoisted undefined variable. 
 
-To be continued...
+The following example demonstrates that the scope is created during hoisting is preserved through the execution phase: 
+
+```
+const name = 'Donald Trump';
+ 
+function myNameIs() {
+  console.log('My name is ' + name);
+}
+ 
+function clone() {
+  const name = 'Jack Sparrow';
+  myNameIs();
+}
+
+clone();
+----------------
+My name is Donald Trump
+```
+
+Even though `myNameIs()` is called inside the `clone()` function, it was declared in the global scope. So when it cannot find the variable `name` locally it goes a scope higher, where `name`'s value is "Donald Trump". When we deal with the scope, what matters is where the function is declared, not where it's called. 
+
+
 
 
 
