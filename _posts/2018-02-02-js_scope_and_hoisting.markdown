@@ -27,7 +27,7 @@ logging();
 // undefined
 ```
 
-Sorry, Donald, your name is `undefined` (which is still better than `not defined` :). So what happens here is that both the function and variable get hoisted, but the value of the variable `name` get assigned only during execution phase, after console.log is called. If we decide to assign the function to a variable, a TypeError will be thrown: 
+Sorry, Donald, your name is `undefined` (which is still better than `not defined` :). So what happens here is that both the function and variable get hoisted, but the value of the variable `name` gets assigned only during execution phase, after console.log is called. If we decide to assign the function to a variable, a TypeError will be thrown: 
 
 ```
 function logging() {
@@ -47,9 +47,9 @@ logging();
 // TypeError: greet is not a function
 ```
 
-When the `console.log(greet())` gets executed, the engine doesn't know yet that `greet` is a function. It's still a hoisted undefined variable. 
+When `console.log(greet())` gets executed, the engine doesn't know yet that `greet` is a function. It's still a hoisted undefined variable. 
 
-The following example demonstrates that the scope is created during hoisting is preserved through the execution phase: 
+The following example demonstrates that the scope created during hoisting is preserved through the execution phase: 
 
 2.
 ```
@@ -85,7 +85,7 @@ myNameIs();
 // My name is Jack Sparrow!
 ```
 
-This one is pretty simple. The function `myNameIs` is not an object's method (or we could say it's a global window's method), so `this` here refers to global window object. And `name` in the global context is "Jack Sparrow". Let's change this code a little bit. 
+This one is pretty simple. The function `myNameIs` is not an object's method (or we could say it's a global window's method), so `this` refers to the global window object. And `name` in the global context is "Jack Sparrow". Let's change this code a little bit. 
 
 ```
 let name = "Jack Sparrow";
