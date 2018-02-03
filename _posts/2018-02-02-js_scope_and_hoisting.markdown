@@ -140,7 +140,37 @@ person.myNameIs();
  
 Here `this` is inside a function which is not an object's method. It refers to window object that has a global variable `name` with a value of "Donald Trump".
 
+Let's also touch briefly the differences between ES5 and ES6 variable declaration keywords.
 
+ES6
+```
+let color = 'red';
+let alert = false;
+
+if ( color === 'red' ) {
+  let alert = true;
+};
+
+console.log(alert);
+----------------
+// false
+```
+
+let is block scoped which means that in this example we have two `alert` variables: global and local. `let alert = true;` simply declares a new variable, it doesn't reassign the global one. var, on the other hand, is function scoped and also allows to redefine variables: 
+
+ES5
+```
+var color = 'red';
+var alert = false;
+
+if ( color === 'red' ) {
+  var alert = true;
+};
+
+console.log(alert);
+----------------
+// true
+```
 
 
 
