@@ -193,6 +193,14 @@ health;
 => { memory: 'neutral', CPU: '31%' }
 ```
 
+Since `const` variable cannot be reassigned, it cannot be simply declared without assignment: 
+
+```
+const health;
+----------------
+// SyntaxError: Unexpected token (1:12)
+```
+
 
 
 
