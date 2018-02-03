@@ -172,6 +172,27 @@ console.log(alert);
 // true
 ```
 
+If you want to avoid accidental variable reassignment, ES6 introduced a helpful keyword `const`:
+
+```
+const memory = "low";
+memory = "neutral";
+```
+
+The second line will throw an error and `memory` value will remain `low`. However, if an object is declared with const, it's properties can be changed: 
+
+```
+const health = {
+  memory: "low",
+  CPU: "31%"
+}
+
+health.memory = "neutral";
+health;
+----------------
+=> { memory: 'neutral', CPU: '31%' }
+```
+
 
 
 
