@@ -69,7 +69,7 @@ clone();
 // My name is Donald Trump
 ```
 
-Even though `myNameIs()` is called inside the `clone()` function, it was declared in the global scope. So when it cannot find the variable `name` locally it goes a scope higher, where `name`'s value is "Donald Trump". When we deal with the scope, what matters is where the function is declared, not where it's called. 
+Even though `myNameIs()` is called inside the `clone()` function, it was declared in the global scope. So when it cannot find the variable `name` locally it goes a scope higher, where `name`'s value is "Donald Trump". When we deal with the scope, what matters is** where the function is declared, not where it's called**. 
 
 3.
 ```
