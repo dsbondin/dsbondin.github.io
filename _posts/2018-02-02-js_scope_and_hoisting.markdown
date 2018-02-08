@@ -5,7 +5,7 @@ date:       2018-02-02 11:29:40 -0500
 permalink:  js_scope_and_hoisting
 ---
 
-Even though I'm almost done with the Javascript section of the course, it turns out there are still some blanks I need to fill. Specifically scope and hoisting. I will not go into every detail as this info is abundant on Learn.co and other resources, I'll just concentrate on the tricky parts using examples. 
+Even though I'm almost done with the Javascript section of the course, it turns out there are still some blanks I need to fill. Specifically scope and hoisting. I will not go into every detail as this info is abundant on Learn.co and other resources, I'll just explain the tricky parts using examples. 
 
 1.
 ```
