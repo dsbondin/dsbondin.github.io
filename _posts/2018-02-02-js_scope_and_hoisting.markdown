@@ -178,12 +178,13 @@ If we wrap the if condition into a function, `var alert = true` will create a ne
 var color = 'red';
 var alert = false;
 
-function changeAlert(color) {
+function changeAlert() {
   if ( color === 'red' ) {
   var alert = true;
   }
 }
 
+changeAlert();
 
 console.log(alert);
 ----------------
