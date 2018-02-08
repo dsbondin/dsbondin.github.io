@@ -196,6 +196,8 @@ If you want to avoid accidental variable reassignment, ES6 introduced a helpful 
 ```
 const memory = "low";
 memory = "neutral";
+----------------
+// SyntaxError: Assignment to constant variable: memory at 2:0
 ```
 
 The second line will throw an error and `memory` value will remain `low`. However, if an object is declared with const, it's properties can be changed: 
