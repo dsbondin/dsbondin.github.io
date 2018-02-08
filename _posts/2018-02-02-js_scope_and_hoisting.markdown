@@ -172,6 +172,24 @@ console.log(alert);
 // true
 ```
 
+If we wrap the if condition into a function, `var alert = true` will create a new local variable instead of reassigning the global:
+
+```
+var color = 'red';
+var alert = false;
+
+function changeAlert(color) {
+  if ( color === 'red' ) {
+  var alert = true;
+  }
+}
+
+
+console.log(alert);
+----------------
+// false
+```
+
 If you want to avoid accidental variable reassignment, ES6 introduced a helpful keyword `const`:
 
 ```
