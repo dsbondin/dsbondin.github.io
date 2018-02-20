@@ -1,12 +1,12 @@
 ---
 layout: post
-title:      "Final Project"
+title:      "React/Redux Final Project"
 date:       2018-02-12 09:56:01 -0500
 permalink:  final_project
 ---
 
 
-It's been 5 months since I started at Learn.co and it was an amazing experience. It still is actually. I must admit the final project has been the most challenging so far. Even though I had solved all the labs on React-Redux, it turned out I still lacked comprehensive understanding of these technologies. Up until now I thought that back-end is my favorite part of programming, now it's backend AND React-Redux. Not sure why, probably because only now I start getting it :)
+It's been 5 months since I started at Learn.co and it was an amazing experience. It still is actually. I must admit out of all projects the final one has been the most challenging. I started working on it only after 3 weeks of studying React/Redux and honestly speaking, at that time I still lacked comprehensive understanding of these technologies. A week later my project was finished and now I can proudly say that I get it! Another interesting thing is that up until now I had thought that back-end is my favorite part of programming, but now I can add React-Redux to the list. 
 
 Initially I wanted my project to be simple so I could finish it quickly and start job hunting. On the other hand I understand that it's going to be a major part of my portfolio. So I came up with a compromise: it will be a simple app that shows a user random quotes on Advaita Vedanta with a possibility to rate and add new quotes to the database. The bonus part is that it implements user authentication. 
 
